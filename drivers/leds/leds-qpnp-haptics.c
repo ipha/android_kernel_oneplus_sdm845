@@ -1523,7 +1523,7 @@ static ssize_t qpnp_haptics_show_duration(struct device *dev,
 
 	if (hrtimer_active(&chip->stop_timer)) {
 		time_rem = hrtimer_get_remaining(&chip->stop_timer);
-W		time_us = ktime_to_us(time_rem);
+		time_us = ktime_to_us(time_rem);
 	}
 
 	return snprintf(buf, PAGE_SIZE, "%lld\n", div_s64(time_us, 1000));
